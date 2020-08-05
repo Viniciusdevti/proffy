@@ -1,4 +1,4 @@
-layoutimport React from 'react';
+import React from 'react';
 
 import whatsappIcon from '../../assets/images/icons/whatsapp.svg';
 
