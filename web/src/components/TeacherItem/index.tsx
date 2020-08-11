@@ -21,7 +21,7 @@ function TeacherItem() {
        Professor de química do ensino médio. 
         <br />
         <br />
-        Apaixonado por tecnologia e ideias.
+        Apaixonado por química orgânica. 
       </p>
       <footer>
         <p>
