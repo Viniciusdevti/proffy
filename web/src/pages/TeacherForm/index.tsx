@@ -67,18 +67,18 @@ function TeacherForm(){
 
     return (
         <div id="page-teacher-form" className="container">
-            <PageHeader title="Awesome! You want to give lessons"
-            description="The first step is fill this inscription form"/>
+            <PageHeader title="Que incrível que você quer da aulas"
+            description="O primeiro passo é preencher o fórmulario"/>
         
         
             <main>
                 <form onSubmit={handleCreateClass}>
                     <fieldset>
-                        <legend>Your info</legend>
+                        <legend>Seus dados</legend>
 
                         <Input 
                             name="name" 
-                            label="Complete Name" 
+                            label="Nome completo" 
                             value={name} 
                             onChange={(e) => {
                                 setName(e.target.value)
@@ -194,7 +194,7 @@ function TeacherForm(){
 
                         </p>
                         <button type="submit">
-                            Register Class
+                            Salvar cadastro
                         </button>
                     </footer>
                 </form>

@@ -28,9 +28,11 @@ export default function Landing() {
 
   return (
     <div id="page-landing">
+    
       <div className="container" id="page-landing-content">
         <div className="logo-container">
           <img src={logoImg} alt="Proffy" />
+         
           <h2>Sua Plataforma de estudos online</h2>
         </div>
 
