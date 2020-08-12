@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/bin/node /usr/share/yarn/bin/yarn.js add @type/cors -D
+  /usr/bin/node /usr/share/yarn/bin/yarn.js add knex:migration
 
 PATH: 
   /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/vinicius/.dotnet/tools
@@ -14,17 +14,17 @@ Platform:
   linux x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/@type%2fcors: Not found
-      at Request.params.callback [as _callback] (/usr/share/yarn/lib/cli.js:66987:18)
-      at Request.self.callback (/usr/share/yarn/lib/cli.js:140748:22)
-      at Request.emit (events.js:315:20)
-      at Request.<anonymous> (/usr/share/yarn/lib/cli.js:141720:10)
-      at Request.emit (events.js:315:20)
-      at IncomingMessage.<anonymous> (/usr/share/yarn/lib/cli.js:141642:12)
-      at Object.onceWrapper (events.js:421:28)
-      at IncomingMessage.emit (events.js:327:22)
-      at endReadableNT (_stream_readable.js:1220:12)
-      at processTicksAndRejections (internal/process/task_queues.js:84:21)
+  Error: knex:migration: Invalid protocol: knex:
+      at Request.module.exports.Request.init (/usr/share/yarn/lib/cli.js:141017:31)
+      at new Request (/usr/share/yarn/lib/cli.js:140690:8)
+      at request (/usr/share/yarn/lib/cli.js:137596:10)
+      at RequestManager.execute (/usr/share/yarn/lib/cli.js:67039:15)
+      at RequestManager.shiftQueue (/usr/share/yarn/lib/cli.js:67077:10)
+      at /usr/share/yarn/lib/cli.js:66746:13
+      at new Promise (<anonymous>)
+      at new F (/usr/share/yarn/lib/cli.js:5301:28)
+      at RequestManager.request (/usr/share/yarn/lib/cli.js:66744:19)
+      at NpmRegistry.<anonymous> (/usr/share/yarn/lib/cli.js:31704:42)
 
 npm manifest: 
   {
@@ -38,13 +38,14 @@ npm manifest:
           "knex:rollback": "knex --knexfile knexfile.ts migrate:rollback"
       },
       "devDependencies": {
+          "@types/cors": "^2.8.7",
           "@types/express": "^4.17.7",
           "ts-node-dev": "^1.0.0-pre.56",
           "typescript": "^3.9.7"
       },
       "dependencies": {
           "express": "^4.17.1",
-          "knex": "^0.21.2",
+          "knex": "^0.21.4",
           "sqlite3": "^5.0.0"
       }
   }
@@ -72,6 +73,13 @@ Lockfile:
     dependencies:
       "@types/node" "*"
   
+  "@types/cors@^2.8.7":
+    version "2.8.7"
+    resolved "https://registry.yarnpkg.com/@types/cors/-/cors-2.8.7.tgz#ab2f47f1cba93bce27dfd3639b006cc0e5600889"
+    integrity sha512-sOdDRU3oRS7LBNTIqwDkPJyq0lpHYcbMTt0TrjzsXbk/e37hcLTH6eZX7CdbDeN0yJJvzw9hFBZkbtCSbk/jAQ==
+    dependencies:
+      "@types/express" "*"
+  
   "@types/express-serve-static-core@*":
     version "4.17.9"
     resolved "https://registry.yarnpkg.com/@types/express-serve-static-core/-/express-serve-static-core-4.17.9.tgz#2d7b34dcfd25ec663c25c85d76608f8b249667f1"
@@ -81,7 +89,7 @@ Lockfile:
       "@types/qs" "*"
       "@types/range-parser" "*"
   
-  "@types/express@^4.17.7":
+  "@types/express@*", "@types/express@^4.17.7":
     version "4.17.7"
     resolved "https://registry.yarnpkg.com/@types/express/-/express-4.17.7.tgz#42045be6475636d9801369cd4418ef65cdb0dd59"
     integrity sha512-dCOT5lcmV/uC2J9k0rPafATeeyz+99xTt54ReX11/LObZgfzJqZNcW27zGhYyX+9iSEGXGt5qLPwRSvBZcLvtQ==
@@ -1372,10 +1380,10 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-6.0.3.tgz#07c05034a6c349fa06e24fa35aa76db4580ce4dd"
     integrity sha512-dcS1ul+9tmeD95T+x28/ehLgd9mENa3LsvDTtzm3vyBEO7RPptvAD+t44WVXaUjTBRcrpFeFlC8WCruUR456hw==
   
-  knex@^0.21.2:
-    version "0.21.2"
-    resolved "https://registry.yarnpkg.com/knex/-/knex-0.21.2.tgz#716e2f515aa55575eb812b4c7f58e532a3de6a12"
-    integrity sha512-hNp9f3yXCHtMrhV2pVsuCNYmPlgXhyqviMQGLBd9zdF03ZqCO9MPng0oYhNMgIs+vDr55VC6tjEbF1OQ1La7Kg==
+  knex@^0.21.4:
+    version "0.21.4"
+    resolved "https://registry.yarnpkg.com/knex/-/knex-0.21.4.tgz#cf0fdf43a119f6c9458e24cfe576a3864898bebf"
+    integrity sha512-vUrR4mJBKWJPouV9C7kqvle9cTpiuuzBWqrQXP7bAv+Ua9oeKkEhhorJwArzcjVrVBojZYPMMtNVliW9B00sTA==
     dependencies:
       colorette "1.2.1"
       commander "^5.1.0"
